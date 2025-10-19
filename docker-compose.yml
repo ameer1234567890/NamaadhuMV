@@ -1,0 +1,9 @@
+services:
+  namaadhumv:
+    container_name: namaadhumv
+    image: ameer1234567890/namaadhumv
+    environment:
+      - TZ=Asia/Karachi
+    ports:
+      - 6336:6336
+    restart: unless-stopped

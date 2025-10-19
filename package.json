@@ -1,0 +1,25 @@
+{
+  "name": "namaadhumv",
+  "version": "1.0.0",
+  "description": "An API app to get prayer times",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ameer1234567890/NamaadhuMV.git"
+  },
+  "author": "Ameer Dawood",
+  "license": "MIT",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/ameer1234567890/NamaadhuMV/issues"
+  },
+  "homepage": "https://github.com/ameer1234567890/NamaadhuMV",
+  "dependencies": {
+    "express": "^5.1.0",
+    "sqlite3": "^5.1.7"
+  }
+}
