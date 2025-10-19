@@ -6,7 +6,7 @@ const app = express();
 
 // Connect to the database file
 const dbPath = path.join(__dirname, "db", "namaadhu.db");
-const namaadhu = new sqlite3.Database(dbPath);
+const namaadhu = new sqlite3.Database(dbPath, sqlite3.OPEN_READONLY);
 
 // Helper: Convert "HH:MM" → total minutes
 function toMinutes(timeStr) {
@@ -32,6 +32,7 @@ function getNextPrayer(prayers, nowMinutes) {
 
 // Route: Return today’s prayer times + next prayer
 app.get("/", (req, res) => {
+  console.log("HTTP", req.httpVersion, req.method, req.url);
   const today = new Date();
   const month = today.getMonth() + 1;
   const day = today.getDate();
