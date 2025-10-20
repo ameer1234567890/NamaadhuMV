@@ -52,6 +52,12 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/status", (req, res) => {
+  res.json({
+    status: "ok"
+  });
+});
+
 // Start the server
 const PORT = process.env.PORT || 6336;
 app.listen(PORT, () => console.log(`Server running on http://localhost:${PORT}`));
