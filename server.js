@@ -32,7 +32,7 @@ function getNextPrayer(prayers, nowMinutes) {
 
 // Route: Return today’s prayer times + next prayer
 app.get("/", (req, res) => {
-  console.log("HTTP", req.httpVersion, req.method, req.url, req);
+  console.log("HTTP", req.httpVersion, req.method, req.url, req.headers['user-agent']);
   const today = new Date();
   const month = today.getMonth() + 1;
   const day = today.getDate();
