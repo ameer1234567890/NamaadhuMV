@@ -17,17 +17,19 @@ function toMinutes(timeStr) {
 // Helper: Determine the next prayer
 function getNextPrayer(prayers, nowMinutes) {
   const order = ["fajr", "sunrise", "duhr", "asr", "maghrib", "isha"];
+  let isPrayer = true;
   for (const name of order) {
+    isPrayer = name == "sunrise" ? false : true;
     const time = prayers[name];
     if (!time) continue;
     if (toMinutes(time) > nowMinutes) {
       const diff = toMinutes(time) - nowMinutes;
-      return { name, time, minutesUntil: diff };
+      return { name, time, minutesUntil: diff, isPrayer };
     }
   }
   // All prayers passed → next fajr (tomorrow)
   const diff = 24 * 60 - nowMinutes + toMinutes(prayers["fajr"]);
-  return { name: "fajr (tomorrow)", time: prayers["fajr"], minutesUntil: diff };
+  return { name: "fajr (tomorrow)", time: prayers["fajr"], minutesUntil: diff, isPrayer };
 }
 
 // Route: Return today’s prayer times + next prayer
