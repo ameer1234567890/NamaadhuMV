@@ -29,7 +29,7 @@ function getNextPrayer(prayers, nowMinutes) {
   }
   // All prayers passed → next fajr (tomorrow)
   const diff = 24 * 60 - nowMinutes + toMinutes(prayers["fajr"]);
-  return { name: "fajr (tomorrow)", time: prayers["fajr"], minutesUntil: diff, isPrayer };
+  return { name: "fajr", time: prayers["fajr"], minutesUntil: diff, isPrayer };
 }
 
 // Route: Return today’s prayer times + next prayer
