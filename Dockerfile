@@ -1,4 +1,4 @@
-FROM node:26-alpine
+FROM --platform=$BUILDPLATFORM node:26-alpine
 
 RUN apk update && \
     apk add --no-cache --update tzdata tini
